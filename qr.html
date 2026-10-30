@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cybara • QR – csatlakozás a telefonnal</title>
+<style>
+  :root{
+    --bg:#090b14; --panel:#11142a; --line:rgba(255,255,255,.12);
+    --text:#f4f5fb; --muted:#a6abc0; --accent:#8b5cf6; --accent2:#22d3ee;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; display:grid; place-items:center; padding:28px;
+    font-family:ui-sans-serif,-apple-system,"Segoe UI",sans-serif; color:var(--text);
+    background:
+      radial-gradient(circle at 15% 12%,rgba(139,92,246,.24),transparent 32rem),
+      radial-gradient(circle at 85% 85%,rgba(34,211,238,.16),transparent 32rem),
+      var(--bg);
+  }
+  .card{
+    width:min(560px,100%); padding:34px; text-align:center;
+    border:1px solid var(--line); border-radius:26px; background:rgba(255,255,255,.055);
+    box-shadow:0 30px 90px rgba(0,0,0,.45); backdrop-filter:blur(18px);
+  }
+  .badge{
+    display:inline-block; padding:6px 13px; border:1px solid var(--line); border-radius:999px;
+    font-size:.75rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  }
+  h1{margin:18px 0 6px; font-size:clamp(1.7rem,5vw,2.4rem); letter-spacing:-.035em}
+  p.sub{margin:0; color:var(--muted)}
+  .qr-frame{
+    display:inline-block; margin:26px 0 6px; padding:18px; border-radius:22px;
+    background:#fff; box-shadow:0 18px 50px rgba(0,0,0,.42);
+  }
+  .qr-frame img{display:block; width:min(300px,72vw); height:auto; image-rendering:pixelated}
+  .url{
+    display:block; margin:20px auto 0; padding:13px 16px; border:1px solid var(--line);
+    border-radius:14px; background:rgba(0,0,0,.28); color:var(--accent2);
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.95rem; word-break:break-all;
+  }
+  .steps{margin:26px 0 0; padding:0; list-style:none; text-align:left; display:grid; gap:11px}
+  .steps li{display:flex; gap:12px; align-items:flex-start; color:var(--muted); font-size:.9rem}
+  .steps b{
+    display:grid; place-items:center; flex:0 0 auto; width:25px; height:25px; border-radius:8px;
+    color:#fff; font-size:.78rem; background:linear-gradient(135deg,var(--accent),var(--accent2));
+  }
+  .steps strong{color:var(--text)}
+  .note{
+    margin:24px 0 0; padding:13px 15px; border:1px solid var(--line); border-radius:14px;
+    background:rgba(34,211,238,.08); color:var(--muted); font-size:.82rem;
+  }
+  .note strong{color:var(--text)}
+  footer{margin-top:20px; font-size:.76rem; color:var(--muted)}
+</style>
+</head>
+<body>
+  <main class="card">
+    <span class="badge">Cybara × Norbert</span>
+    <h1>S-scan be a telefonnal</h1>
+    <p class="sub">Nyisd meg ezt a QR-kódot a telefon kamerájával</p>
+
+    <div class="qr-frame">
+      <img src="cybara-qr.png" width="396" height="396" alt="QR-kód: http://192.168.0.175:8765/index.html">
+    </div>
+
+    <code class="url" id="url">http://192.168.0.175:8765/index.html</code>
+
+    <ol class="steps">
+      <li><b>1</b><span>A telefon és a Mac <strong>ugyanazon a Wi-Fi-hálózaton</strong> legyen.</span></li>
+      <li><b>2</b><span>Nyisd meg a telefon <strong>kameráját</strong> és irányítsd a kódra.</span></li>
+      <li><b>3</b><span>Koppints a megjelenő linkre — a bemutatkozó oldal a telefonon nyílik meg.</span></li>
+    </ol>
+
+    <p class="note"><strong>Tipp:</strong> ha nem működik, nyisd meg kézzel ezt a címet a telefon böngészőjében: <code>http://192.168.0.175:8765/</code></p>
+    <footer>A szerver a Macen fut: <code>python3 -m http.server 8765 --bind 0.0.0.0</code></footer>
+  </main>
+</body>
+</html>
