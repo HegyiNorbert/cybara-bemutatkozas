@@ -20,38 +20,38 @@
       var(--bg);
   }
   .card{
-    width:min(560px,100%); padding:32px; text-align:center;
+    width:min(580px,100%); padding:32px; text-align:center;
     border:1px solid var(--line); border-radius:26px; background:rgba(255,255,255,.055);
     box-shadow:0 30px 90px rgba(0,0,0,.45); backdrop-filter:blur(18px);
   }
   .badge{
     display:inline-flex; align-items:center; gap:8px; padding:6px 13px; border:1px solid var(--line);
-    border-radius:999px; font-size:.73rem; font-weight:800; letter-spacing:.11em;
+    border-radius:999px; font-size:.72rem; font-weight:800; letter-spacing:.11em;
     text-transform:uppercase; color:var(--muted);
   }
   .badge i{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok)}
   h1{margin:18px 0 6px; font-size:clamp(1.6rem,5vw,2.3rem); letter-spacing:-.035em}
   p.sub{margin:0; color:var(--muted); font-size:.94rem}
   .qr-frame{
-    display:inline-block; margin:24px 0 4px; padding:16px; border-radius:22px;
+    display:inline-block; margin:22px 0 4px; padding:16px; border-radius:22px;
     background:#fff; box-shadow:0 18px 50px rgba(0,0,0,.42);
   }
   .qr-frame img{display:block; width:min(290px,70vw); height:auto; image-rendering:pixelated}
   .url{
-    display:block; margin:18px auto 0; padding:13px 15px; border:1px solid var(--line);
+    display:block; margin:16px auto 0; padding:13px 15px; border:1px solid var(--line);
     border-radius:14px; background:rgba(0,0,0,.3); color:var(--accent2);
-    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.9rem; word-break:break-all;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88rem; word-break:break-all;
   }
-  .url.local{color:var(--muted); font-size:.78rem; margin-top:8px}
-  .steps{margin:24px 0 0; padding:0; list-style:none; text-align:left; display:grid; gap:11px}
-  .steps li{display:flex; gap:12px; align-items:flex-start; color:var(--muted); font-size:.9rem}
+  .url.alt{color:var(--muted); font-size:.76rem; margin-top:8px; border-style:dashed}
+  .steps{margin:22px 0 0; padding:0; list-style:none; text-align:left; display:grid; gap:10px}
+  .steps li{display:flex; gap:12px; align-items:flex-start; color:var(--muted); font-size:.89rem}
   .steps b{
     display:grid; place-items:center; flex:0 0 auto; width:25px; height:25px; border-radius:8px;
     color:#fff; font-size:.78rem; background:linear-gradient(135deg,var(--accent),var(--accent2));
   }
   .steps strong{color:var(--text)}
   .note{
-    margin:22px 0 0; padding:13px 15px; border:1px solid var(--line); border-radius:14px;
+    margin:20px 0 0; padding:13px 15px; border:1px solid var(--line); border-radius:14px;
     background:rgba(34,211,238,.08); color:var(--muted); font-size:.82rem; text-align:left;
   }
   .note strong{color:var(--text)}
@@ -60,7 +60,7 @@
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:46px; padding:0 18px;
     border:1px solid var(--line); border-radius:13px; background:rgba(255,255,255,.06);
-    color:var(--text); font-weight:700; font-size:.88rem; text-decoration:none; cursor:pointer;
+    color:var(--text); font-weight:700; font-size:.87rem; text-decoration:none; cursor:pointer;
   }
   .btn.primary{
     color:#fff; border-color:transparent; background:linear-gradient(135deg,var(--accent),#6d4adf);
@@ -72,39 +72,39 @@
 </head>
 <body>
   <main class="card">
-    <span class="badge"><i></i> Mobil internet · nyilvános HTTPS</span>
+    <span class="badge"><i></i> Mobil internet · stabil HTTPS</span>
     <h1>S-scan be a telefonnal</h1>
-    <p class="sub">Ez a cím bárhonnan elérhető — Wi-Fi nélkül, mobil interneten is</p>
+    <p class="sub">Ez a cím bárhonnan elérhető — mobil interneten, bármely hálózaton</p>
 
     <div class="qr-frame">
-      <img src="cybara-qr-public.png" width="684" height="684" alt="QR-kód: https://highs-contracting-session-jennifer.trycloudflare.com/index.html">
+      <img src="cybara-qr-stable.png" width="684" height="684" alt="QR-kód: https://hegyinorbert.github.io/cybara-bemutatkozas/">
     </div>
 
-    <code class="url" id="url">https://highs-contracting-session-jennifer.trycloudflare.com/index.html</code>
-    <code class="url local" id="urlLocal">Helyi (Wi-Fi): http://192.168.0.175:8765/index.html</code>
+    <code class="url" id="url">https://hegyinorbert.github.io/cybara-bemutatkozas/</code>
+    <code class="url alt" id="urlAlt">Helyi (Wi-Fi): http://192.168.0.175:8765/</code>
 
     <ol class="steps">
-      <li><b>1</b><span>A telefonon kapcsold ki a Wi-Fi-t, vagy csak <strong>kapcsold be a mobil adatát</strong>.</span></li>
+      <li><b>1</b><span>A telefonon <strong>kapcsold ki a Wi-Fi-t</strong>, hogy biztosan mobil adatot használjon.</span></li>
       <li><b>2</b><span>Nyisd meg a telefon <strong>kameráját</strong> és irányítsd a kódra.</span></li>
       <li><b>3</b><span>Koppints a megjelenő linkre — a bemutatkozó oldal a telefonon nyílik meg.</span></li>
     </ol>
 
     <div class="btns">
-      <a class="btn primary" id="openBtn" href="https://highs-contracting-session-jennifer.trycloudflare.com/index.html" target="_blank" rel="noopener">Megnyitom most</a>
-      <a class="btn" href="https://highs-contracting-session-jennifer.trycloudflare.com/qr.html" target="_blank" rel="noopener">QR oldal</a>
+      <a class="btn primary" id="openBtn" href="https://hegyinorbert.github.io/cybara-bemutatkozas/" target="_blank" rel="noopener">Megnyitom most</a>
+      <a class="btn" href="https://hegyinorbert.github.io/cybara-bemutatkozas/qr-mobile.html" target="_blank" rel="noopener">QR oldal</a>
     </div>
 
     <p class="note">
-      <strong>Mi a nyilvános URL?</strong> A Macen futó szerverhez egy Cloudflare-alagút kapcsolódik,
-      így a tartalom HTTPS-en, bármely hálózaton elérhető — nem csak a saját Wi-Fi-dben.
+      <strong>Ez most már állandó cím.</strong> GitHub Pages-en fut, HTTPS-en, a Mac kikapcsoltságától
+      függetlenül. Nem kell újraindítani semmit, és a QR soha nem jár le.
     </p>
     <p class="note warn">
-      <strong>Fontos:</strong> az alagút a Mac bekapcsoltságához és futó szerverhez kötött.
-      Újraindítás után az <code>*.trycloudflare.com</code> cím megváltozhat — akkor új QR kell.
-      A Mac kikapcsolásakor a link elérhetetlenné válik.
+      <strong>Ha nem nyílik meg:</strong> a telefonon koppints a címre kézzel (másold ki fenti kódról),
+      vagy ellenőrizd, hogy nincs-e adatforgalmat szűrő VPN / szülői vezérlés.
+      Tartalék alagút: <code>https://highs-contracting-session-jennifer.trycloudflare.com/</code>
     </p>
 
-    <footer>Cybara × Norbert · helyben futó szerver + Cloudflare gyors alagút</footer>
+    <footer>Cybara × Norbert · GitHub Pages · https</footer>
   </main>
 </body>
 </html>
